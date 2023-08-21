@@ -31,8 +31,8 @@ from seleniumbase import Driver
 cluster = MongoClient('mongodb+srv://theloveme1238:zx5LtPcgLpcpIh7D@cluster0.pzuhxov.mongodb.net/?retryWrites=true&w=majority')
 db = cluster["my_database"]
 collection = db["users"]        
-driver = Driver(uc=True)
-#driver = get_driver("chrome")
+#driver = Driver(uc=True)
+driver = get_driver("chrome")
 driver.implicitly_wait(10)
             
 driver.maximize_window()
@@ -512,7 +512,7 @@ def like():
     global con_like
     my_list_like = []
     driver.get("https://www.like4like.org/earn-credits.php?feature=youtube")
-    #driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
 
     con_like = 0
     con_like_2 = 0
